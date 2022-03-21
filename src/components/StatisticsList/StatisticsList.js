@@ -2,12 +2,12 @@ import Statistics from 'components/Statistics/Statistics';
 import s from './StatisticsList.module.css';
 import PropTypes from 'prop-types';
 
-function StatisticsList({ items }) {
+function StatisticsList({ title, stats }) {
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>Upload stats</h2>
+      {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.stat__list}>
-        {items.map(item => (
+        {stats.map(item => (
           <li
             className={s.item}
             key={item.id}
@@ -26,7 +26,7 @@ function StatisticsList({ items }) {
 }
 
 StatisticsList.propTypes = {
-  items: PropTypes.arrayOf(
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
     })
