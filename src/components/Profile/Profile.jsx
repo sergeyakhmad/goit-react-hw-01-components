@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
-function Profile({
+const Profile = ({
   username,
   tag,
   location,
   avatar,
   stats: { followers, views, likes },
-}) {
+}) => {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -33,7 +33,7 @@ function Profile({
       </ul>
     </div>
   );
-}
+};
 
 Profile.propTypes = {
   username: PropTypes.string.isRequired,
